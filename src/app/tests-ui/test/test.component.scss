@@ -1,0 +1,22 @@
+.test-execution-phase {
+  margin-right: 8px;
+}
+
+@keyframes inProgressAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.in-progress {
+  animation-name: inProgressAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}

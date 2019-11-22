@@ -1,0 +1,14 @@
+<app-test [name]="test.definition.name" [phase]="test.phases.test$ | async" *ngFor="let test of tests">
+  <app-test-info *ngIf="testsOrchestration.isIndependentTest(test.definition.id)">
+    <button mat-button color="primary" (click)="testsOrchestration.runTest(test.definition.id)">Start Test</button>
+    <button mat-button (click)="testsOrchestration.runTestWithoutDependents(test.definition.id)">
+      Run This Test Only
+    </button>
+    <button mat-button (click)="testsOrchestration.resetTestAndDependents(test.definition.id)">
+      Reset
+    </button>
+  </app-test-info>
+  <app-test-step *ngFor="let step of test.definition.steps" [phase]="test.phases.steps$[step.id] | async">
+    {{step.description}}
+  </app-test-step>
+</app-test>

@@ -1,0 +1,20 @@
+<mat-expansion-panel [disabled]="disabled">
+  <mat-expansion-panel-header [@testBackground]="phase" [class.in-progress]="phase === 'IN_PROGRESS'">
+    <mat-panel-title>
+      <h2 class="vertical-center">
+        <app-execution-phase-icon [phase]="phase" class="test-execution-phase"></app-execution-phase-icon>
+        {{name}}
+      </h2>
+    </mat-panel-title>
+    <mat-panel-description>
+      <div class="vertical-center">
+        <ng-content select="app-test-description"></ng-content>
+      </div>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <ng-content select="app-test-info"></ng-content>
+  <mat-list *ngIf="testSteps.length" dense>
+    <h3 mat-subheader>Steps</h3>
+    <ng-content select="app-test-step"></ng-content>
+  </mat-list>
+</mat-expansion-panel>

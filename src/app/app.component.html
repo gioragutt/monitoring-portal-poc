@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">Monitoring Portal Prototype</mat-toolbar>
+<div class="tests-container">
+  <app-tests>
+    <app-entity-tests></app-entity-tests>
+    <app-test name="Time Difference">
+      <app-test-info>
+        Show &lt;clock-component&gt;&lt;/clock-component&gt; and compare to time in phone<br>
+        <b>// TODO: how much difference is too much?</b>
+      </app-test-info>
+    </app-test>
+    <app-test name="Communication Channels">
+      <app-test-info>
+        Show count of communication channels from the rest api
+      </app-test-info>
+    </app-test>
+    <app-test name="Number Of Entities">
+      <app-test-info>
+        Query amount of targets that don't have a parent uuid<br>
+        <b>TODO: is something more specific needed?</b>
+      </app-test-info>
+    </app-test>
+    <app-test name="Old Legacy System Communication" disabled>
+      <app-test-description>
+        <b>
+          Unsupported due to inability to query legacy system
+        </b>
+      </app-test-description>
+    </app-test>
+  </app-tests>
+</div>
